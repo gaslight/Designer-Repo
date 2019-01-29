@@ -3,13 +3,14 @@
 ---
 
 //Abstracts
-@import "abstracts/font";
+// @import "abstracts/fonts";
 @import "abstracts/variables";
 
 //Base
 @import "base/base";
 @import "base/layout";
-@import "base/syntax-hightlighting";
+// @import "base/syntax-highlighting";
+@import "base/typography.scss";
 
 
 //Blocks
