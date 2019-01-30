@@ -26,8 +26,3 @@ a {
   cursor: pointer;
   text-decoration: none;
   }
-
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: $disabled-opacity;
-  }
