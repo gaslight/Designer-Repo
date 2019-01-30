@@ -35,3 +35,13 @@ $border-xl: $space-xs solid $gray-lighter;
 $border-radius-base: $space-sm;
 $border-radius-sm: $space-xs;
 $border-radius-circle: 50%;
+
+// Box-shadow
+$box-shadow: 0px 2px 20px -2px rgba($gray, .32);
+
+// Line Height
+$line-height-header: 1.3em;
+
+
+// Disabled Styles
+$disabled-opacity: .5;

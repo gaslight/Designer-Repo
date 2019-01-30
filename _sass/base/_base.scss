@@ -42,15 +42,6 @@ figure > img {
 figcaption {
   font-size: 14px; }
 
-/**
- * Lists
- */
-ul, ol {
-  margin-left: 30px; }
-
-li > ul,
-li > ol {
-  margin-bottom: 0; }
 
 /**
  * Headings
@@ -58,21 +49,21 @@ li > ol {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
 
-/**
- * Links
- */
-a {
-  color: #2a7ae2;
-  text-decoration: none; }
-  a:visited {
-    color: #1756a9; }
-  a:hover {
-    color: #111;
-    text-decoration: underline; }
-  .social-media-list a:hover {
-    text-decoration: none; }
-    .social-media-list a:hover .username {
-      text-decoration: underline; }
+// /**
+//  * Links
+//  */
+// a {
+//   color: #2a7ae2;
+//   text-decoration: none; }
+//   a:visited {
+//     color: #1756a9; }
+//   a:hover {
+//     color: #111;
+//     text-decoration: underline; }
+//   .social-media-list a:hover {
+//     text-decoration: none; }
+//     .social-media-list a:hover .username {
+//       text-decoration: underline; }
 
 /**
  * Blockquotes
