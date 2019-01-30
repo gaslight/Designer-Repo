@@ -10,7 +10,8 @@
 @import "base/base";
 @import "base/layout";
 // @import "base/syntax-highlighting";
-@import "base/typography.scss";
+@import "base/typography";
 
 
 //Blocks
+@import "blocks/card";

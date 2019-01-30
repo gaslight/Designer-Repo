@@ -1,0 +1,37 @@
+//  Colors
+$black: #2d2d2d;
+$gray: #ccc;
+$gray-light: #e5e5e5;
+$gray-lighter: #d0d3d5;
+$gray-lightest: #e5e8e9;
+$white: #ffffff;
+
+$off-white: #f2f5f8;
+
+$prim-blue: #69c3e2;
+$prim-yellow: #f4d544;
+$prim-red: #f27165;
+
+$color-primary: $prim-blue;
+$color-secondary: $prim-yellow;
+
+$bg-color: $off-white;
+
+
+// Spacing
+$space-xs: .25rem;
+$space-sm: .5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-xxl: 2.5rem;
+
+
+// Borders
+$border-base: 1px solid $gray-lighter;
+$border-lg: 2px solid $gray-lighter;
+$border-xl: $space-xs solid $gray-lighter;
+
+$border-radius-base: $space-sm;
+$border-radius-sm: $space-xs;
+$border-radius-circle: 50%;
