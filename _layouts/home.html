@@ -8,7 +8,7 @@ layout: default
   {%- endif -%}
 
   {{ content }}
-
+  posts {{site.posts.size}}
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Latest Articles" }}</h2>
     <section id="feed">
@@ -18,26 +18,44 @@ layout: default
           <a href="{{ post.url | relative_url }}" class="card-link">
 
             <div class="card-photo">
-              <img src="assets/images/{{post.image}}.png" />
+              {%- if post.image -%}
+                <img src="assets/images/{{post.image}}.png" />
+              {%- endif -%}
             </div>
 
             <div class="card-body">
 
-              <h3 class="u-ta-c card-title">
+              <h3 class="u-ta-c card-title u-m-n-t u-m-sm-b">
                   {{ post.title | escape }}
               </h3>
-              {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-              {%- endif -%}
+
+              <h5 class="u-ta-c">
+                  {{ post.origin| escape }}
+              </h5>
+
+              <div class="card-tags u-ta-c">
+
+                  {%- for cat in post.categories -%}
+                    <span class="card-tag">{{cat}}</span>
+                  {%- endfor -%}
+
+              </div>
+                {%- if site.show_excerpts -%}
+                  {{ post.excerpt }}
+                {%- endif -%}
+
             </div>
-
-
-            <div class="card-footer">
-              {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-              <span class="post-meta">{{ post.date | date: date_format }}</span>
-            </div>
-
           </a>
+
+          <div class="card-footer">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y - %I:%M" -%}
+            <span class="card-meta u-f">
+              <h5 class="u-m-n-b">
+                <i class="far fa-clock u-p-sm-r"></i>
+                {{ post.date | date: date_format }}
+              </h5>
+            </span>
+          </div>
         </li>
         {%- endfor -%}
       </ul>
