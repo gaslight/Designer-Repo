@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 blockquote {
   color: #828282;
-  border-left: 4px solid #e8e8e8;
+  border-left: 4px solid $gray-lightest;
   padding-left: 15px;
   font-size: 18px;
   letter-spacing: -1px;
@@ -78,7 +78,7 @@ blockquote {
 pre,
 code {
   font-size: 15px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid $gray-lightest;
   border-radius: 3px;
   background-color: #eef; }
 
@@ -117,7 +117,7 @@ table {
   text-align: left;
   color: #3f3f3f;
   border-collapse: collapse;
-  border: 1px solid #e8e8e8; }
+  border: 1px solid $gray-lightest; }
   table tr:nth-child(even) {
     background-color: #f7f7f7; }
   table th, table td {
@@ -127,14 +127,14 @@ table {
     border: 1px solid #dedede;
     border-bottom-color: #c9c9c9; }
   table td {
-    border: 1px solid #e8e8e8; }
+    border: 1px solid $gray-lightest; }
 
 /**
  * Site header
  */
 .site-header {
   border-top: 5px solid #424242;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid $gray-lightest;
   min-height: 55.95px;
   position: relative; }
 
@@ -144,7 +144,11 @@ table {
   line-height: 54px;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left; }
+  float: left;
+  padding-right: $space-lg;
+  border-right: 1px solid $gray-lightest;
+ }
+
   .site-title, .site-title:visited {
     color: #424242; }
 
@@ -166,7 +170,7 @@ table {
       top: 9px;
       right: 15px;
       background-color: #fdfdfd;
-      border: 1px solid #e8e8e8;
+      border: 1px solid $gray-lightest;
       border-radius: 5px;
       text-align: right; }
       .site-nav label[for="nav-trigger"] {
@@ -203,7 +207,7 @@ table {
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid $gray-lightest;
   padding: 30px 0; }
 
 .footer-heading {
