@@ -35,6 +35,10 @@ collections:
   archive:
     output: true
 
+algolia:
+  application_id: GZZT16YZGC
+  index_name:     GDR 
+
 defaults:
 
 # Exclude from processing.

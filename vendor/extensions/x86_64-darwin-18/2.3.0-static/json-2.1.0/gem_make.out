@@ -1,0 +1,13 @@
+current directory: /Users/tiko/src/Gaslight/DesignerRepo/vendor/gems/json-2.1.0/ext/json
+/Users/tiko/.asdf/installs/ruby/2.3.7/bin/ruby -r ./siteconf20190204-50870-10tldrg.rb extconf.rb
+creating Makefile
+
+current directory: /Users/tiko/src/Gaslight/DesignerRepo/vendor/gems/json-2.1.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/tiko/src/Gaslight/DesignerRepo/vendor/gems/json-2.1.0/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/tiko/src/Gaslight/DesignerRepo/vendor/gems/json-2.1.0/ext/json
+make "DESTDIR=" install
