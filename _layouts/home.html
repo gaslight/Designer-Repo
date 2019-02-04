@@ -8,7 +8,7 @@ layout: default
   {%- endif -%}
 
   {{ content }}
-  posts {{site.posts.size}}
+
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Latest Articles" }}</h2>
     <section id="feed">
@@ -29,8 +29,8 @@ layout: default
                   {{ post.title | escape }}
               </h3>
 
-              <h5 class="u-ta-c">
-                  {{ post.origin| escape }}
+              <h5 class="u-ta-c u-m-lg-b">
+                  {{ post.origin| default:  '&mdash;' }}
               </h5>
 
               <div class="card-tags u-ta-c">
@@ -48,11 +48,10 @@ layout: default
           </a>
 
           <div class="card-footer">
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y - %I:%M" -%}
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <span class="card-meta u-f">
               <h5 class="u-m-n-b">
-                <i class="far fa-clock u-p-sm-r"></i>
-                {{ post.date | date: date_format }}
+                <i class="far fa-clock u-p-xs-r"></i>{{post.date | date: date_format }}
               </h5>
             </span>
           </div>

@@ -89,6 +89,22 @@
 
   &-lg {
     margin: $space-lg;
+
+    &-t {
+      margin-top: $space-lg;
+    }
+
+    &-r {
+      margin-right: $space-lg;
+    }
+
+    &-b {
+      margin-bottom: $space-lg;
+    }
+
+    &-l {
+      margin-left: $space-lg;
+    }
   }
 
   &-xl {
