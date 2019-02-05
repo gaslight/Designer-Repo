@@ -9,7 +9,7 @@
 5. In browser, go to `localhost:4000`.
 
 
-## Adding Articles
+## Adding Links to Articles
 
 1. Create a new file in `_posts`.
 2. Rename it to `YYYY-MM-DD-<post-name>.markdown`.
@@ -19,9 +19,9 @@
     layout: post
     title:  "Post Name"
     date:   2019-01-31 14:19:36
-    categories: categories separated by 
-    image:  "woke_icons3"
-    origin:  "Engadget"
-    abcd: "https://www.engadget.com/"
+    categories: [categories, to, add ]
+    image:  "name_of_image"*
+    origin:  "Origin Website"
+    site: "www.originURL.comm"
     ---
-    This is test post 1.
+4. Save your .png image to `/assets/images`.

@@ -5,6 +5,6 @@ date:   2019-01-31 14:19:36 -0500
 categories: ["jekyll", "update", "testing"]
 image:  "woke_icons3"
 origin:  "Engadget"
-abcd: "https://www.engadget.com/"
+site: "https://www.engadget.com/"
 ---
 This is test post 1.
