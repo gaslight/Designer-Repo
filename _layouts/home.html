@@ -12,6 +12,89 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <h2 class="post-list-heading">{{ page.list_title | default: "Latest Articles" }}</h2>
     <section id="feed">
+      <div id="hits">
+
+      </div>
+
+      <script>
+        const search = instantsearch({
+          appId: 'GZZT16YZGC',
+          apiKey: '4cd258e39503c8b6d53e7210ec297943',
+          indexName: 'GDR',
+          routing: true
+        });
+
+        const hitTemplate = function (hit) {
+          const title = hit._highlightResult.title.value;
+          const url = hit.url;
+          const image = hit.image;
+          const origin = hit.origin;
+          const categories = hit.categories;
+          const date = new Date (hit.date*1000);
+          var months_arr = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+
+
+          return (`
+          <a href= ${url} class="card-link">
+            <div class="card-photo">
+              <img src="assets/images/${image}.png">
+            </div><div class="card-body">
+
+              <h3 class="u-ta-c card-title u-m-n-t u-m-sm-b">
+                ${title}
+              </h3>
+              <h5 class="u-ta-c u-m-lg-b">
+                  ${origin}
+              </h5>
+              <div class="card-tags u-ta-c">
+                ${categories}
+              </div>
+            </div>
+          </a>
+
+          <div class="card-footer">
+            <span class="card-meta u-f">
+              <h5 class="u-m-n-b">
+                <i class="far fa-clock u-p-xs-r"></i>
+                ${months_arr[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()  }
+              </h5>
+            </span>
+          </div>`);
+        }
+
+
+
+        // initialize SearchBox
+        search.addWidget(
+          instantsearch.widgets.searchBox({
+            container: '#search-box',
+            placeholder: 'Search... '
+          })
+        );
+
+        // initialize hits widget
+        search.addWidget(
+          instantsearch.widgets.hits({
+            container: '#hits',
+            templates: {
+              empty: 'No Results.',
+              item: hitTemplate
+              },
+            escapeHits: true,
+            transformItems: items => items.map(item => item),
+          })
+        );
+
+        search.addWidget(
+          instantsearch.widgets.configure({
+            filters: 'NOT type:"page"',
+          })
+        );
+
+
+        search.start();
+      </script>
       <ul class="card-list feed">
         {%- for post in site.posts -%}
         <li class="card">
@@ -40,10 +123,6 @@ layout: default
                   {%- endfor -%}
 
               </div>
-                {%- if site.show_excerpts -%}
-                  {{ post.excerpt }}
-                {%- endif -%}
-
             </div>
           </a>
 
