@@ -9,13 +9,18 @@
     left: 112px;
   background-color: white;
   width: 80vw;
-  padding: 1rem;
+  padding: $space-sm;;
   z-index: 10;
 }
 
-.ais-hits {
+.ais {
+  &-search-box {
+    height: 56px !important;
 
-  &--items {
-
+    &--input {
+      background: transparent !important;
+      box-shadow: unset !important;
+      border: 0px !important;
+    }
   }
 }
