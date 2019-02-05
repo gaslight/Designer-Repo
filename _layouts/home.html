@@ -45,7 +45,7 @@ layout: default
                 ${title}
               </h3>
               <h5 class="u-ta-c u-m-lg-b">
-                  ${origin}
+                  ${origin == undefined ? '&mdash;' : origin}
               </h5>
               <div class="card-tags u-ta-c">
                 ${categories}
@@ -95,7 +95,9 @@ layout: default
 
         search.start();
       </script>
-      <ul class="card-list feed">
+
+
+      <!-- <ul class="card-list feed">
         {%- for post in site.posts -%}
         <li class="card">
           <a href="{{ post.url | relative_url }}" class="card-link">
@@ -136,7 +138,7 @@ layout: default
           </div>
         </li>
         {%- endfor -%}
-      </ul>
+      </ul> -->
     </section>
 
 
