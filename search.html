@@ -1,13 +1,7 @@
 ---
 layout: search
 ---
-<form action="{{ site.baseurl }}" method="get">
-  <label for="search-box">Search</label>
-  <input type="text" id="search-box" name="query">
-  <input type="submit" value="search">
-</form>
-
-<ul id="search-results"></ul>
+<ul id="search-results" class="search-results"></ul>
 
 <script>
   window.store = {
@@ -17,7 +11,9 @@ layout: search
         "author": "{{ post.author | xml_escape }}",
         "category": "{{ post.category | xml_escape }}",
         "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{ post.url | xml_escape }}"
+        "url": "{{ post.url | xml_escape }}",
+        "image": "{{ post.image | xml_escape }}",
+        "origin": "{{ post.origin | xml_escape }}"
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}

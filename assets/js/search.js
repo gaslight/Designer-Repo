@@ -1,5 +1,6 @@
 (function() {
   function displaySearchResults(results, store) {
+    console.log(results);
     var searchResults = document.getElementById('search-results');
 
     if (results.length) { // Are there any results?
@@ -7,8 +8,9 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
-        appendString += '<li><a href="' + item.url + '"><h3>' + item.title + '</h3></a>';
-        appendString += '<p>' + item.content.substring(0, 150) + '...</p></li>';
+        appendString += '<li class="search-results--result"><a href="' + item.url + '"><h2>' + item.title + '</h2></a>';
+        appendString += '<p>' + item.origin + '</p></li>';
+
       }
 
       searchResults.innerHTML = appendString;
@@ -33,25 +35,25 @@
   var searchTerm = getQueryVariable('query');
 
   if (searchTerm) {
-    document.getElementById('search-box').setAttribute("value", searchTerm);
+    // document.getElementById('search-box').setAttribute("value", searchTerm);
 
     // Initalize lunr with the fields it will be searching on. I've given title
     // a boost of 10 to indicate matches on this field are more important.
     var idx = lunr(function () {
       this.field('id');
       this.field('title', { boost: 10 });
-      this.field('author');
       this.field('category');
-      this.field('content');
+      this.field('origin');
+      this.field('image');
     });
 
     for (var key in window.store) { // Add the data to lunr
       idx.add({
         'id': key,
         'title': window.store[key].title,
-        'author': window.store[key].author,
         'category': window.store[key].category,
-        'content': window.store[key].content
+        'origin': window.store[key].origin,
+        'image': window.store[key].image
       });
 
       var results = idx.search(searchTerm); // Get lunr to perform a search
