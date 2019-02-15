@@ -17,8 +17,8 @@ title: Gaslight Design Repo
 email: hello@teamgaslight.com
 description: > # this means to ignore newlines until "baseurl:"
   Gaslight internal resources repo for shared articles.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://gaslight.github.io/Designer-Repo/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "Designer-Repo/" # the subpath of your site, e.g. /blog
+url: "https://gaslight.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: TeamGaslight
 github_username: Gaslight
 
@@ -35,7 +35,8 @@ collections:
   archive:
     output: true
 
-defaults:
+sass:
+  sass_dir: _sass
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
